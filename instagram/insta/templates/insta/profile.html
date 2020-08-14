@@ -1,0 +1,64 @@
+{% extends 'insta/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="profile-big">
+  <div class="profile-svgdiv">
+    <svg viewBox="0 0 16 16" class="bi bi-person-circle profile-svg" fill="black" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+    </svg>
+  </div>
+
+  <div class="profile-content">
+    <div class="profile">
+      <div class="profile-1">
+        <h2 class="masthead-subheading mb-0">{{ user.username }}</h2>
+        <a href="/mypage" class="btn btn-primary btn-xl rounded-pill mt-5">프로필 편집</a>
+        <a href="/create" class="btn btn-primary btn-xl rounded-pill mt-5">새 게시물</a>
+      </div>
+        <div class="profile-2">
+          <div><h4>게시물</h4></div>
+          <div><h4>팔로워</h4></div>
+          <div><h4>팔로우</h4></div>
+          <div class="div"><h4>?</h4></div>
+          <div class="div"><h4>825</h4> </div>
+          <div class="div"><h4>520</h4></div>
+        </div>
+      </div>
+      <hr>
+      <h4 class="profile-name">송지예</h4>
+    </div>
+  </div>
+
+  <hr class="profile-hr">
+  <div class="profile-grid">
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-grid-3x3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13zM1.5 1a.5.5 0 0 0-.5.5V5h4V1H1.5zM5 6H1v4h4V6zm1 4V6h4v4H6zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5v-4zm1 0h4v4H6v-4zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11h-4zm0-1h4V6h-4v4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11v4zm-1 0H6V1h4v4z"/>
+    </svg>
+    <p>게시물</p>
+  </div>
+</div>
+
+<div class="profile-imgg">
+{% for post in posts %}
+<section>
+  <!-- <div class="profile-imgg"> -->
+    <!-- <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="p-5"> -->
+          <div class="profile-img">
+          {% if post.image %}
+          <img src="{{ post.image.url }}" alt="">
+          {% endif %}
+          </div>
+        <!-- </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+</section>
+{% endfor %}
+</div>
+
+{% endblock %}

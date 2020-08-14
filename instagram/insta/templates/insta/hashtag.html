@@ -1,0 +1,34 @@
+{% extends 'insta/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hashtag-big">
+  <div class="hashtag-round">
+    <img class="img-fluid rounded-circle" src="{% static 'insta/img/park.jpg' %}" alt="">
+  </div>
+  <div class="hashtag-box">
+    <h1 class="hashtag-name">#{{ hashtag.name }}</h1>
+    <h4>게시물</h4><h4>?</h4>
+    <br>
+    <button type="button" class="btn btn-primary">팔로우</button>
+  </div>
+  <br>
+</div>
+
+<div class="hashtag-gray">
+  <p>최근 사진</p>
+</div>
+
+<div class="profile-imgg">
+{% for post in hashtag.post_set.all %}
+<section>
+  <div class="profile-img">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" alt="">
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+</div>
+
+{% endblock %}
