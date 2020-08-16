@@ -457,6 +457,7 @@ footer .container{
     float: right;
     position: absolute;
     top: 103px;
+    position: fixed;
 }
 
 .home-profile{
@@ -565,4 +566,38 @@ footer .container{
 
 .home-sort{
     display: inline-block;
+}
+
+/* signup.html */
+
+section .signup-article{
+    width: 935px;
+    height: 662px;
+}
+
+section article .signup-form{
+    width: 350px;
+    margin: 0 auto;
+}
+
+section article form input{
+    margin: 5px 0px;
+}
+
+section article form .signup-input{
+    position: relative;
+    left: 83px;
+}
+
+section article .signin-button{
+    position: relative;
+    top: 260px;
+    right: 365px;
+    text-align: center;
+}
+
+section .logoo{
+    width: 175px;
+    height: 65px;
+    margin: 280px 87px 15px;
 }

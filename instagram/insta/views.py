@@ -8,10 +8,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    posts = Post.objects.all()
-    signin_form=SigninForm()
+    posts = Post.objects.all().order_by('-id')
     comment_form=CommentForm()
-    return render(request, 'insta/home.html', {'posts':posts, 'comment_form':comment_form, 'signin_form': signin_form})
+    return render(request, 'insta/home.html', {'posts':posts, 'comment_form':comment_form})
 
 def loginn(request):
     signin_form=SigninForm()
@@ -21,10 +20,12 @@ def sett(request):
     posts = Post.objects.all()
     return render(request, 'insta/sett.html', {'posts':posts})
 
-def profile(request):
-    posts = Post.objects.all()
-    comment_form=CommentForm()
-    return render(request, 'insta/profile.html', {'posts':posts, 'comment_form':comment_form})
+def profile(request, user_id):
+    # user=request.user
+    # posts = Post.objects.filter(writer=user.pk).order_by('-id') #근데 이거는 html은 user.pk고 url은 <int:pk>이고 뷰스가 pk일때임.(return도 당근 필요)
+    posts = Post.objects.all().filter(writer=user_id).order_by('-id')
+
+    return render(request, 'insta/profile.html', {'posts':posts})
 
 def mypage(request):
     posts = Post.objects.all()

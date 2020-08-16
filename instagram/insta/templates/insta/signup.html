@@ -14,24 +14,26 @@
   </head>
   <body>
     <section>
-        <article>
-        <div class="signup-form">
-          <img class="logo" src="{% static 'insta/img/logo.jpg' %}">
+        <div class="signup-div">
+        <article class="signup-article">
+          <div class="signup-form">
+            <img class="logoo" src="{% static 'insta/img/logo.jpg' %}">
 
-          <form method="POST">
-              {% csrf_token %}
-              <table>
-                {{ form.as_table }}
-              </table>
-              <input type="submit" value="가입">
-          </form>
-          <br>
-        </div>
-        
-        <div class="signin-button">
-          <p class="pp">계정이 있으신가요? <a href="/">로그인</a></p>
-        </div>
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                  {{ form.as_table }}
+                </table>
+                <input class="signup-input" type="submit" value="가입">
+            </form>
+            <br>
+          </div>
+          
+          <div class="signin-button">
+            <p class="ppp">계정이 있으신가요? <a href="/">로그인</a></p>
+          </div>
         </article>
+        </div>
     </section>
 
     <footer>

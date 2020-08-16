@@ -34,7 +34,7 @@ urlpatterns = [
     path('hashtag/<str:hashtag_name>', insta.views.hashtag, name='hashtag'),
     # path('location/<str:location_place>', insta.views.location, name='location'),
     path('like/<int:pk>', insta.views.like, name='like'),
-    path('profile', insta.views.profile, name='profile'),
+    path('profile/<int:user_id>', insta.views.profile, name='profile'),
     path('mypage', insta.views.mypage, name='mypage'),
 
     path('', include('django.contrib.auth.urls')),
